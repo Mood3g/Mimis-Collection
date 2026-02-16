@@ -1,0 +1,165 @@
+        .carousel-slide {
+            min-height: 500px;
+            padding: 60px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-1 {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .slide-2 {
+            background: #c2c2c2;
+            color: #1e293b;
+        }
+
+        .slide-3 {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            color: white;
+        }
+
+        /* Fade transition instead of slide */
+        .carousel-item {
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel-item:not(.active) {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+        }
+
+        .carousel-content h1 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .carousel-content .lead {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .carousel-image img {
+            text-align: center;
+            font-size: 15rem;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+
+        .slide-2 .carousel-image {
+            opacity: 1;
+            color: #2563eb;
+        }
+
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .carousel-indicators button.active {
+            background-color: white;
+        }
+
+        .slide-2 .carousel-indicators button {
+            background-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .slide-2 .carousel-indicators button.active {
+            background-color: #2563eb;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            padding: 0.5rem;
+        }
+
+        .slide-2 .carousel-control-prev-icon,
+        .slide-2 .carousel-control-next-icon {
+            background-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-lg {
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            border-color: #2563eb;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            border-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-dark {
+            background-color: #1e293b;
+            border-color: #1e293b;
+        }
+
+        .btn-dark:hover {
+            background-color: #0f172a;
+            border-color: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(30, 41, 59, 0.3);
+        }
+
+        .btn-outline-primary {
+            color: white;
+            border-color: white;
+            border-width: 2px;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: white;
+            color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            border-radius: 4px;
+        }
+
+        /* Responsive Carousel */
+        @media (max-width: 991px) {
+            .carousel-slide {
+                min-height: 400px;
+                padding: 40px 0;
+                text-align: center;
+            }
+
+            .carousel-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .carousel-image {
+                font-size: 8rem;
+                margin-top: 2rem;
+            }
+        }
