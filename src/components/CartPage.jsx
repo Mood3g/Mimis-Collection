@@ -79,6 +79,11 @@ const CartPage = () => {
         >
           Clear Cart
         </button>
+
+        <Link to='/checkout'>
+         <button className='btn btn-warning mt-2 p-2 px-4 ms-4 text-light '>Checkout</button>
+        </Link>
+       
       </div>
     </div>
   );

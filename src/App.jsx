@@ -13,7 +13,7 @@ import Product from './pages/Product'
 import CreateProductForm from './forms/CreateProductForm'
 import DetailPage from './components/DetailPage'
 import CartPage from './components/CartPage'
-
+import CheckoutPage from './components/CheckoutPage'
 
 
 const App = () => {
@@ -29,6 +29,8 @@ const App = () => {
         <Route path='/create-product' element={<CreateProductForm />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path='/product/:id' element={<DetailPage />} />
+        <Route path='/checkout' element={<CheckoutPage />} />
+
         </Route>
     </Routes>
     </BrowserRouter>

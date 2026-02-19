@@ -52,7 +52,7 @@ const authSlice = createSlice({
             state.status = 'loading'
             state.error = null
         })
-        .addCase(register.fulfilled, (state, action)=>{
+        .addCase(register.fulfilled,(state,action)=>{
             state.status = 'succeeded'
             state.error = null
         })
