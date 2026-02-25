@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { FaTruck } from "react-icons/fa";
-import '../styles/checkout.css';
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { FaTruck } from "react-icons/fa"
+import '../styles/checkout.css'
+import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3'
+
+
 
 const CheckoutPage = () => {
   // Pull real cart data from Redux (safe fallback)
@@ -30,9 +33,8 @@ const CheckoutPage = () => {
   };
 
   // Static extras (you can make dynamic later based on form data)
-  const shipping = 2000;
-  const tax = Math.round(totalAmount * 0.075); // example 7.5% tax – adjust as needed
-  const grandTotal = totalAmount + shipping + tax;
+  
+  const grandTotal = totalAmount;
 
   if (cartItems.length === 0) {
     return (
@@ -43,6 +45,26 @@ const CheckoutPage = () => {
       </div>
     );
   }
+
+  //Flutterwave Payment
+        const flwConfig = {
+        public_key: 'FLWPUBK_TEST-c20fa28c70eeab3ca0dfa3765fee4051-X',
+        amount: totalAmount,
+        currency: 'NGN',
+        payment_options: 'card,banktransfer,ussd,mobilemoney', 
+        customer: {
+          
+        },
+        customizations: {           
+        },
+        callback: (response) => {
+      console.log('Payment response:', response); // handle success/fail
+        closePaymentModal()
+        },
+        onClose: () => {
+          console.log('Payment modal closed by User');
+        },
+          }
 
   return (
     <main className="checkout-container">
@@ -218,14 +240,7 @@ const CheckoutPage = () => {
                   <span>Subtotal ({totalQuantity} items)</span>
                   <span>₦{totalAmount.toLocaleString()}</span>
                 </div>
-                <div className="total-row">
-                  <span>Shipping</span>
-                  <span>₦{shipping.toLocaleString()}</span>
-                </div>
-                <div className="total-row">
-                  <span>Tax</span>
-                  <span>₦{tax.toLocaleString()}</span>
-                </div>
+
                 <div className="total-row final">
                   <span>Total</span>
                   <span>₦{grandTotal.toLocaleString()}</span>
@@ -233,11 +248,11 @@ const CheckoutPage = () => {
               </div>
 
               {/* Place Order Button (no payment yet) */}
-              <button className="btn btn-primary w-100 mt-3 py-3">
-                <i className="bi bi-lock-fill me-2"></i>
-                Place Order
-              </button>
-
+              <FlutterWaveButton 
+                {...flwConfig} 
+                className="btn btn-primary w-100 mt-3 py-3"
+                text="Pay Now"
+              />
               <p className="text-center text-muted mt-3 mb-0" style={{ fontSize: '0.875rem' }}>
                 <i className="bi bi-shield-check"></i> Secure checkout - Your information is protected
               </p>

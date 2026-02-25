@@ -86,7 +86,7 @@ const Header = () => {
       <li>
           <Link className="dropdown-item d-flex align-items-center gap-2" to="/products">
               <i className="bi bi-box-seam"></i>
-              Products
+              Product Listing
           </Link>
       </li>
           </ul>
