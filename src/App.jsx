@@ -14,6 +14,8 @@ import CreateProductForm from './forms/CreateProductForm'
 import DetailPage from './components/DetailPage'
 import CartPage from './components/CartPage'
 import CheckoutPage from './components/CheckoutPage'
+import Contact from './pages/Contact'
+import About from './pages/About'
 
 
 const App = () => {
@@ -30,7 +32,8 @@ const App = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path='/product/:id' element={<DetailPage />} />
         <Route path='/checkout' element={<CheckoutPage />} />
-
+        < Route path='/contact' element= {<Contact />}/>
+        < Route path='/about' element= {<About />}/>
         </Route>
     </Routes>
     </BrowserRouter>

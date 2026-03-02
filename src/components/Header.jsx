@@ -10,8 +10,15 @@ import { Link } from 'react-router-dom'
 
 
 const Header = () => {
+    
     const dispatch = useDispatch()
   const {totalQuantity} = useSelector(state=>state.carts)
+  const {user} = useSelector(state=>state.users)
+
+  const handleLogout = () => {
+    dispatch(logout())
+  };
+
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-primary bg-dark">
@@ -41,41 +48,43 @@ const Header = () => {
   <div className="navbar-nav ms-auto">
     
       <div className="nav-item dropdown">
-           <button className="btn btn-link text-white text-decoration-none dropdown-toggle d-flex align-items-center gap-2" type="button" id="helpDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+           <button className="btn btn-link text-white text-decoration-none dropdown-toggle d-flex align-items-center gap-2" type="button" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                <IoPersonCircleOutline style={{height: '24px', width: '24px'}}/>
-               <span>Account</span>
+               <span>{user?user.name:'Account'}</span>
            </button>
           <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
-
-             <li>
-          <Link className="dropdown-item d-flex align-items-center gap-2" to="/register">
-              Sign Up
-          </Link>
-          <hr />
-      </li>
-
-        <li>
-          <Link className="dropdown-item d-flex align-items-center gap-2" to="/login" >
-              Sign In
-          </Link>
-          
-      </li>
-       <hr />
-        <li>
-          <Link className="dropdown-item d-flex align-items-center gap-2" onClick={()=>dispatch(logout())}>
-              Logout
-          </Link>
-          
-      </li>
-      </ul>
+            {user ? (
+              <>
+                <li>
+                  <button className="dropdown-item text-danger" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link className="dropdown-item" to="/login">
+                    Login
+                  </Link>
+                </li>
+                <hr />
+                <li>
+                  <Link className="dropdown-item" to="/register">
+                    Register
+                  </Link>
+                </li>
+              </>
+            )}
+          </ul>
       </div>
-
+    
       <div className="nav-item dropdown">
-           <button className="btn btn-link text-white text-decoration-none dropdown-toggle d-flex align-items-center gap-2" type="button" id="helpDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+           <button className="btn btn-link text-white text-decoration-none dropdown-toggle d-flex align-items-center gap-2" type="button" id="productDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                <FaBox style={{height: '24px', width: '24px'}}/>
                <span>Product</span>
            </button>
-          <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+          <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="productDropdown">
 
              <li>
           <Link className="dropdown-item d-flex align-items-center gap-2" to="/create-product">
@@ -98,9 +107,9 @@ const Header = () => {
                <span>Help</span>
            </button>
            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="helpDropdown">
-               <li><Link className="dropdown-item" to="#">About Us</Link></li>
+               <li><Link className="dropdown-item" to="/about">About Us</Link></li>
                <li><hr className="dropdown-divider"/></li>
-               <li><Link className="dropdown-item" to="#">Contact Us</Link></li>
+               <li><Link className="dropdown-item" to="contact">Contact Us</Link></li>
            </ul>
       </div>
 

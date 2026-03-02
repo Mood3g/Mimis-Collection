@@ -43,7 +43,7 @@ const authSlice = createSlice({
         users:[],
         status:'idle',
         error:null,
-        user:0
+        user: null
     },
     reducers:{},
     extraReducers:(builder)=>{
@@ -70,11 +70,7 @@ const authSlice = createSlice({
             const {token} = action.payload
             try {
                 const decoded = jwtDecode(token)
-                // state.user ={
-                //     id:decoded.id,
-                //     token,
-                // }
-                state.user = decoded.id
+                state.user = decoded
                 localStorage.setItem('token',token)
             } catch (error) {
                 state.error = error.message
@@ -92,5 +88,6 @@ const authSlice = createSlice({
         })
     }
 })
+
 
 export default authSlice.reducer
