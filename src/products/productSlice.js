@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios'
 
 
-const API_BASE = 'https://anna-apis-144y.onrender.com/api/products'
+const API_BASE = 'https://okwiris-collection-api.onrender.com/api/products'
 // fetch products (list)
 export const fetchProduct = createAsyncThunk(
   'products/fetchProduct',

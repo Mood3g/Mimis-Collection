@@ -46,7 +46,7 @@ const Product = () => {
             <div className="col-sm-6 col-md-4 col-lg-3 mb-4" key={product._id}>
               <div className="card h-100 shadow-sm">
                 <img
-                  src={`https://anna-apis-144y.onrender.com/${product.image}`}
+                  src={`https://okwiris-collection-api.onrender.com/${product.image}`}
                   className="card-img-top"
                   alt={product.title}
                   style={{ height: '220px', objectFit: 'cover' }}

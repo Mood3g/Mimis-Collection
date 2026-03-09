@@ -3,7 +3,7 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
 
-const API = 'https://anna-apis-144y.onrender.com/api/auth'
+const API = 'https://okwiris-collection-api.onrender.com/api/users'
 
 export const register = createAsyncThunk(
     'users/register',

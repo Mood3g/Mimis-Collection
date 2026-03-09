@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = 'https://anna-apis-144y.onrender.com/api/products'
+const API = 'https://okwiris-collection-api.onrender.com/api/products'
 
 export const fetchSingle = createAsyncThunk(
     'product/fetchSingle',

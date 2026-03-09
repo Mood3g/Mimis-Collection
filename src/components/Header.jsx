@@ -50,7 +50,7 @@ const Header = () => {
       <div className="nav-item dropdown">
            <button className="btn btn-link text-white text-decoration-none dropdown-toggle d-flex align-items-center gap-2" type="button" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                <IoPersonCircleOutline style={{height: '24px', width: '24px'}}/>
-               <span>{user?user.name:'Account'}</span>
+               <span className='text-light fw-medium'>{user ? (user.name || 'User') : 'Account'}</span>
            </button>
           <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
             {user ? (

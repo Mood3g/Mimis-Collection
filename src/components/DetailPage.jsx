@@ -26,7 +26,7 @@ const DetailPage = () => {
         <h1 className='text-center text-dark m-3'>Product Details</h1>
         <div className="row">
             <div className="col-sm-4 my-3">
-            <img src={`https://anna-apis-144y.onrender.com/${product.image}`}  alt="" style={{
+            <img src={`https://okwiris-collection-api.onrender.com/${product.image}`}  alt="" style={{
             objectFit: 'contain', objectPosition: 'center' }} className='w-100 h-100' />
             </div>
             <div className="col-sm-4 mt-4" >
