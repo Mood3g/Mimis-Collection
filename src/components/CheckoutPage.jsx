@@ -49,16 +49,19 @@ const CheckoutPage = () => {
   //Flutterwave Payment
         const flwConfig = {
         public_key: 'FLWPUBK_TEST-c20fa28c70eeab3ca0dfa3765fee4051-X',
+        tx_ref: `TX-${Date.now()}`,
         amount: totalAmount,
         currency: 'NGN',
         payment_options: 'card,banktransfer,ussd,mobilemoney', 
         customer: {
-          
+          email: formData.email,
+          phone_number: formData.phone,
+
         },
         customizations: {           
         },
         callback: (response) => {
-      console.log('Payment response:', response); // handle success/fail
+      console.log('Payment response:', response);
         closePaymentModal()
         },
         onClose: () => {
@@ -216,7 +219,7 @@ const CheckoutPage = () => {
                 <div key={item._id} className="order-item">
                   <div className="order-item-image">
                     <img
-                      src={`https://anna-apis-144y.onrender.com/${item.image}`}
+                      src={`https://okwiris-collection-api.onrender.com/${item.image}`}
                       alt={item.title}
                       className="img-fluid rounded"
                       style={{ height: '60px', objectFit: 'cover' }}

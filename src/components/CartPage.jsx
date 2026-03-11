@@ -33,7 +33,7 @@ const CartPage = () => {
           <div className="row g-0 align-items-center p-3">
             <div className="col-md-3 col-4">
               <img
-                src={`https://anna-apis-144y.onrender.com/${cart.image}`}
+                src={`https://okwiris-collection-api.onrender.com/${cart.image}`}
                 alt={cart.title}
                 className="img-fluid rounded"
                 style={{ height: '140px', objectFit: 'cover' }}
