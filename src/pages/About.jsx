@@ -9,7 +9,7 @@ const About = () => {
     <>
       <section class="about-hero">
         <div class="container">
-            <h1>About Okwiri's Collection</h1>
+            <h1>About Mimi's Collection</h1>
             <p>Your trusted destination for quality products and exceptional service. We're passionate about bringing you the best shopping experience.</p>
         </div>
     </section>
@@ -21,7 +21,7 @@ const About = () => {
                     
                     <div class="about-section">
                         <h2>Our Story</h2>
-                        <p>Okwiri's Collection was founded with a simple mission: to provide high-quality products that enhance everyday life.</p>
+                        <p>Mimi's Collection was founded with a simple mission: to provide high-quality products that enhance everyday life.</p>
                         <p>We believe in the power of great design, quality craftsmanship, and outstanding service. Every product in our collection is carefully curated to meet the highest standards.</p>
                     </div>
 
