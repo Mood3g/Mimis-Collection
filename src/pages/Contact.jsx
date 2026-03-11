@@ -29,7 +29,7 @@ const Contact = () => {
                   </div>
                   <h3>Chat on WhatsApp</h3>
                   <p>Get instant support from our customer care team. We're available to help you!</p>
-                  <Link to="https://wa.me/2348153388362?text=Hello%20Okwiri's%20Collection,%20I%20need%20help%20with..." target="_blank">
+                  <Link to="https://wa.me/2348153388362?text=Hello%20Mimi's%20Collection,%20I%20need%20help%20with..." target="_blank">
                       <FaWhatsapp className='me-2' />Start Chat
                   </Link>
               </div>
